@@ -5,3 +5,12 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_DEFAULT_ZONE_URL:http://localhost:8761/eureka/}
+keycloak:
+  realm: ${KEYCLOAK_REALM_NAME:realm-cec}
+  auth-server-url: http://${KEYCLOAK_SERVER_HOST:localhost}:8080/auth
+  ssl-required: external
+  resource: ${KEYCLOAK_CLIENT_NAME:reservation-service}
+  credentials:
+    secret: fcba60c0-b572-4ea6-b692-6a85222fdac6
+  use-resource-role-mappings: true
+  bearer-only: true
