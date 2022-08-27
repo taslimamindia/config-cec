@@ -10,6 +10,6 @@ keycloak:
   realm: ${KEYCLOAK_REALM_NAME:realm-cec}
   auth-server-url: http://${KEYCLOAK_SERVER_HOST:localhost}:8080/auth
   ssl-required: external
-  resource: ${KEYCLOAK_RESOURCE:reservation-service}
+  resource: ${KEYCLOAK_RESOURCE:backend-service}
   public-client: false
   bearer-only: true
