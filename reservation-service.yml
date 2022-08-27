@@ -13,3 +13,9 @@ keycloak:
   resource: ${KEYCLOAK_RESOURCE:backend-service}
   public-client: false
   bearer-only: true
+  authorization-uri: ${keycloak.server-url}/realms/${keycloak.realm}/protocol/openid-connect/auth
+  token-uri: ${keycloak.server-url}/realms/${keycloak.realm}/protocol/openid-connect/token
+  user-info-uri: ${keycloak.server-url}/realms/${keycloak.realm}/protocol/openid-connect/userinfo
+  jwk-set-uri: ${keycloak.server-url}/realms/${keycloak.realm}/protocol/openid-connect/certs
+  user-name-attribute: name
+  user-info-authentication-method: header
