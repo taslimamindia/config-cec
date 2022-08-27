@@ -13,9 +13,9 @@ keycloak:
   resource: ${KEYCLOAK_RESOURCE:backend-service}
   public-client: false
   bearer-only: true
-#   authorization-uri: http://host.docker.internal:8080/auth/realms/realm-cec/protocol/openid-connect/auth
-#   token-uri: http://host.docker.internal:8080/auth/realms/realm-cec/protocol/openid-connect/token
-#   user-info-uri: http://host.docker.internal:8080/auth/realms/realm-cec/protocol/openid-connect/userinfo
-#   jwk-set-uri: http://host.docker.internal:8080/auth/realms/realm-cec/protocol/openid-connect/certs
-#   user-name-attribute: name
-#   user-info-authentication-method: header
+  authorization-uri: http://${KEYCLOAK_SERVER_HOST:localhost}:8080/auth/realms/realm-cec/protocol/openid-connect/auth
+  token-uri: http://${KEYCLOAK_SERVER_HOST:localhost}:8080/auth/realms/realm-cec/protocol/openid-connect/token
+  user-info-uri: http://${KEYCLOAK_SERVER_HOST:localhost}:8080/auth/realms/realm-cec/protocol/openid-connect/userinfo
+  jwk-set-uri: http://${KEYCLOAK_SERVER_HOST:localhost}:8080/auth/realms/realm-cec/protocol/openid-connect/certs
+  user-name-attribute: name
+  user-info-authentication-method: header
