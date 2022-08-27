@@ -1,4 +1,6 @@
 spring:
+  main:
+    allow-bean-definition-overriding: true
   cloud:
     gateway:
       routes:
@@ -15,7 +17,7 @@ spring:
           registration:
             keycloak:
               provider: keycloak
-              client-id: spring-micro-gateway
+              client-id: ${KEYCLOAK_CLIENT_ID:spring-micro-gateway}
               client-secret: ${client-secret}
               authorization-grant-type: authorization_code
               redirect-uri: http://host.docker.internal:9000/login/oauth2/code/keycloak
