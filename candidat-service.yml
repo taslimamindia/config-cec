@@ -5,3 +5,14 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_DEFAULT_ZONE_URL:http://localhost:8761/eureka/}
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${ISSUER_URI:http://host.docker.internal:8080/auth/realms/realm-cec}
+          jwk-set-uri: ${JWT_SET_URI:http://host.docker.internal:8080/auth/realms/realm-cec/protocol/openid-connect/certs}
+
+#Utiliser pour faire passer l'URL à la classe de configuration de security.
+jwkSetUri: ${JWT_SET_URI:http://host.docker.internal:8080/auth/realms/realm-cec/protocol/openid-connect/certs}
