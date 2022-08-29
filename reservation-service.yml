@@ -5,17 +5,14 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_DEFAULT_ZONE_URL:http://localhost:8761/eureka/}
-      
-keycloak:
-  realm: ${KEYCLOAK_REALM_NAME:realm-cec}
-  auth-server-url: http://${KEYCLOAK_SERVER_HOST:localhost}:8080/auth
-  ssl-required: external
-  resource: ${KEYCLOAK_RESOURCE:backend-service}
-  public-client: false
-  bearer-only: true
-#   authorization-uri: http://${KEYCLOAK_SERVER_HOST:localhost}:8080/auth/realms/realm-cec/protocol/openid-connect/auth
-#   token-uri: http://${KEYCLOAK_SERVER_HOST:localhost}:8080/auth/realms/realm-cec/protocol/openid-connect/token
-#   user-info-uri: http://${KEYCLOAK_SERVER_HOST:localhost}:8080/auth/realms/realm-cec/protocol/openid-connect/userinfo
-#   jwk-set-uri: http://${KEYCLOAK_SERVER_HOST:localhost}:8080/auth/realms/realm-cec/protocol/openid-connect/certs
-#   user-name-attribute: name
-#   user-info-authentication-method: header
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${ISSUER_URI:http://host.docker.internal:8080/auth/realms/realm-cec}
+          jwk-set-uri: ${JWT_SET_URI:http://host.docker.internal:8080/auth/realms/realm-cec/protocol/openid-connect/certs}
+
+#Utiliser pour faire passer l'URL à la classe de configuration de security.
+jwkSetUri: ${JWT_SET_URI:http://host.docker.internal:8080/auth/realms/realm-cec/protocol/openid-connect/certs}
