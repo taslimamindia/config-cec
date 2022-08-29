@@ -6,7 +6,10 @@ spring:
           uri: lb://reservation-service
           predicates:
             - Path=/reservations/**
-
+        - id: candidat-service
+          uri: lb://candidat-service
+          predicates:
+            - Path=/candidats/**
 server:
   port: ${SERVER_PORT:9000}
 
