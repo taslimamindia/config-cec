@@ -1,1 +1,7 @@
+server:
+  port: ${SERVER_PORT:8181}
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_DEFAULT_ZONE_URL:http://localhost:8761/eureka/}
