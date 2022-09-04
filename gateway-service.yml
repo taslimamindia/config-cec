@@ -6,6 +6,7 @@ spring:
           '[/**]':
             allowedOrigins: 
               - http://localhost:4200
+              - http://host.docker.internal:4200
             allowedHeaders:
               - content-type
             allowedMethods:
