@@ -26,6 +26,10 @@ spring:
           uri: lb://login-service
           predicates:
             - Path=/login-service/**
+        - id: register-service
+          uri: lb://register-service
+          predicates:
+            - Path=/**
 server:
   port: ${SERVER_PORT:9000}
 
