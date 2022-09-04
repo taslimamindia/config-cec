@@ -10,9 +10,7 @@ spring:
             allowedMethods:
               - GET
               - POST
-              - PUT
-              - DELETE
-              - PATCH
+              - HEAD
       routes:
         - id: reservation-service
           uri: lb://reservation-service
