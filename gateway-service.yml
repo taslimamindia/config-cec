@@ -1,5 +1,11 @@
 spring:
   cloud:
+    discovery:
+      client:
+        simple:
+          instances:
+            service1[0]:
+              uri:http://0.0.0.0:8080/
     gateway:
       globalcors:
 #         corsConfigurations:
