@@ -41,3 +41,27 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_DEFAULT_ZONE_URL:http://localhost:8761/eureka/}
+      
+spring:
+  profiles: abc-service-replica04
+eureka:
+  instance:
+    appname: ABC-SERVICE
+  client:    
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://register-service:8761/eureka    
+server:
+  port: 8004  
+ 
+spring:
+  profiles: abc-service-replica05
+eureka:
+  instance:
+    appname: ABC-SERVICE
+  client:    
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://register-service:8761/eureka    
+server:
+  port: 8005
