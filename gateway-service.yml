@@ -40,7 +40,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${EUREKA_DEFAULT_ZONE_URL:http://localhost:8761/eureka/}
+      defaultZone: ${EUREKA_DEFAULT_ZONE_URL:http://register-service:8761/eureka/}
       
 spring:
   profiles: abc-service-replica04
@@ -50,7 +50,7 @@ eureka:
   client:    
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://register-service:8761/eureka    
+      defaultZone: http://register-service:8761/eureka/    
 server:
   port: 8004  
  
@@ -62,6 +62,6 @@ eureka:
   client:    
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://register-service:8761/eureka    
+      defaultZone: http://register-service:8761/eureka/    
 server:
   port: 8005
