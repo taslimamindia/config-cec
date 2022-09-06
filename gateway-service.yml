@@ -1,11 +1,5 @@
 spring:
   cloud:
-    discovery:
-      client:
-        simple:
-          instances:
-            service1[0]:
-              uri:http://0.0.0.0:8080/
     gateway:
       globalcors:
 #         corsConfigurations:
@@ -36,10 +30,6 @@ spring:
           uri: lb://register-service
           predicates:
             - Path=/**
-        - id: keycloak
-          uri: http://0.0.0.0:8080/
-          predicates:
-            - Path=/auth/**
 server:
   port: ${SERVER_PORT:9000}
 
