@@ -16,27 +16,3 @@ spring:
 
 #Utiliser pour faire passer l'URL à la classe de configuration de security.
 jwkSetUri: ${JWT_SET_URI:http://host.docker.internal:8080/auth/realms/realm-cec/protocol/openid-connect/certs}
-
-spring:
-  profiles: abc-service-replica04
-eureka:
-  instance:
-    appname: ABC-SERVICE  # ==> This is a instance of ABC-SERVICE
-  client:    
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://register-service:8761/eureka    
-server:
-  port: 8004  
- 
-spring:
-  profiles: abc-service-replica05
-eureka:
-  instance:
-    appname: ABC-SERVICE  # ==> This is a instance of ABC-SERVICE
-  client:    
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://register-service:8761/eureka    
-server:
-  port: 8005
