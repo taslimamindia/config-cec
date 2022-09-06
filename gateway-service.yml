@@ -31,7 +31,7 @@ spring:
           predicates:
             - Path=/**
         - id: keycloak
-          uri: lb://keycloak
+          uri: http://host.docker.internal:8080
           predicates:
             - Path=/auth/**
 server:
