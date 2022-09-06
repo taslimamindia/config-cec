@@ -30,6 +30,10 @@ spring:
           uri: lb://register-service
           predicates:
             - Path=/**
+        - id: keycloak
+          uri: lb://keycloak
+          predicates:
+            - Path=/auth/**
 server:
   port: ${SERVER_PORT:9000}
 
